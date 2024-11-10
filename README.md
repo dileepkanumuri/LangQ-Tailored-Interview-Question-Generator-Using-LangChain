@@ -46,7 +46,7 @@ The project is organized to maintain modularity and ease of maintenance.
 LangQ-Tailored-Interview-Question-Generator-Using-LangChain/
 ├── .env                     # Environment variables (e.g., OpenAI API Key)
 ├── app.py                   # Main Streamlit app
-├── requirements.txt         # Python dependencies
+├── requirements.txt         # Langchain,faiss,Python dependencies
 ├── src/
 │   └── helper.py            # Helper functions for Q&A generation
 ├── uploads/                 # Directory for storing uploaded PDF files
