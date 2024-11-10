@@ -26,8 +26,16 @@
 ---
 
 ## Demo
-![Demo Screenshot]([https://user-images.githubusercontent.com/URL_TO_YOUR_DEMO_IMAGE](https://github.com/dileepkanumuri/LangQ-Tailored-Interview-Question-Generator-Using-LangChain/blob/main/Images/Screenshot%201.png))  
-*Replace the URL above with the actual URL of your demo screenshot.*
+Here are some screenshots showcasing LangQ in action:
+
+### Screenshot 1
+![Screenshot 1](https://github.com/dileepkanumuri/LangQ-Tailored-Interview-Question-Generator-Using-LangChain/blob/main/Images/Screenshot%201.png)
+
+### Screenshot 2
+![Screenshot 2](https://github.com/dileepkanumuri/LangQ-Tailored-Interview-Question-Generator-Using-LangChain/blob/main/Images/Screenshot%202.png)
+
+### Screenshot 3
+![Screenshot 3](https://github.com/dileepkanumuri/LangQ-Tailored-Interview-Question-Generator-Using-LangChain/blob/main/Images/Screenshot%203.png)
 
 ---
 
