@@ -1,6 +1,8 @@
 # LangQ: Your AI-Powered Interview Prep Curator
 
-**LangQ** is an end-to-end deployed AI-powered application designed to assist users in preparing for interviews by generating tailored questions and answers. Deployed at [LangQ - LLM](https://langqllm.streamlit.app/), this app utilizes OpenAI’s language model with LangChain to analyze any PDF document (study materials, documentation, cheat sheets, etc.) and produce insightful Q&A pairs. Built on **Streamlit** for an interactive, user-friendly experience.
+**LangQ** is an end-to-end deployed AI-powered application designed to assist users in preparing for interviews by generating tailored questions and answers. 
+
+Deployed & Live at [LangQ - LLM](https://langqllm.streamlit.app/), this app utilizes OpenAI’s language model with LangChain to analyze any PDF document (study materials, documentation, cheat sheets, etc.) and produce insightful Q&A pairs. Built on **Streamlit** for an interactive, user-friendly experience.
 
 ---
 
