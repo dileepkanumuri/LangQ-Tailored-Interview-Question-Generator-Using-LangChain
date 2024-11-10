@@ -26,7 +26,7 @@
 ---
 
 ## Demo
-![Demo Screenshot](https://user-images.githubusercontent.com/URL_TO_YOUR_DEMO_IMAGE)  
+![Demo Screenshot]([https://user-images.githubusercontent.com/URL_TO_YOUR_DEMO_IMAGE](https://github.com/dileepkanumuri/LangQ-Tailored-Interview-Question-Generator-Using-LangChain/blob/main/Images/Screenshot%201.png)(https://github.com/dileepkanumuri/LangQ-Tailored-Interview-Question-Generator-Using-LangChain/blob/main/Images/Screenshot%202.png)(https://github.com/dileepkanumuri/LangQ-Tailored-Interview-Question-Generator-Using-LangChain/blob/main/Images/Screenshot%203.png))  
 *Replace the URL above with the actual URL of your demo screenshot.*
 
 ---
