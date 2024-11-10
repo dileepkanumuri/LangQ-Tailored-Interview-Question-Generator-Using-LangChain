@@ -1,19 +1,24 @@
 # LangQ: Your AI-Powered Interview Prep Curator
 
-**LangQ** is an AI-powered application designed to assist users in preparing for interviews by generating tailored questions and answers. This app utilizes OpenAI’s language model to read and analyze a provided PDF document, producing insightful Q&A pairs. The app is built using **Streamlit** for a seamless, interactive, and user-friendly experience.
+**LangQ** is an AI-powered application designed to assist users in preparing for interviews by generating tailored questions and answers. This app utilizes OpenAI’s language model to read and analyze a provided PDF document, producing insightful Q&A pairs using Langchain. The app is built using **Streamlit** for a seamless, interactive, and user-friendly experience.
 
 ---
 
 ## Table of Contents
 - [Features](#features)
 - [Demo](#demo)
+- [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
 - [Environment Variables](#environment-variables)
+- [Methodology](#methodology)
+- [Step-by-Step Implementation](#step-by-step-implementation)
+- [File Descriptions](#file-descriptions)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
+- [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -39,6 +44,18 @@ Here are some screenshots showcasing LangQ in action:
 
 ---
 
+## Tech Stack
+This project uses the following technologies:
+
+- **Python**: Core programming language for backend and data processing.
+- **Streamlit**: Framework for building interactive and responsive web applications.
+- **OpenAI GPT-3 (via LangChain)**: Language model API for generating questions and answers.
+- **PyPDF2**: Library for reading and extracting text from PDF files.
+- **dotenv**: For securely managing environment variables, such as API keys.
+- **FAISS**: A library for efficient similarity search, used here via LangChain.
+
+---
+
 ## Project Structure
 The project is organized to maintain modularity and ease of maintenance.
 
@@ -46,7 +63,7 @@ The project is organized to maintain modularity and ease of maintenance.
 LangQ-Tailored-Interview-Question-Generator-Using-LangChain/
 ├── .env                     # Environment variables (e.g., OpenAI API Key)
 ├── app.py                   # Main Streamlit app
-├── requirements.txt         # Langchain,faiss,Python dependencies
+├── requirements.txt         # Project dependencies
 ├── src/
 │   └── helper.py            # Helper functions for Q&A generation
 ├── uploads/                 # Directory for storing uploaded PDF files
@@ -122,6 +139,63 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 ---
 
+## Methodology
+1. **PDF Upload and Parsing**:
+   - The user uploads a PDF document, which is saved in the `uploads/` directory.
+   - The **PyPDF2** library reads and extracts the text from the PDF file.
+
+2. **Question and Answer Generation**:
+   - The extracted text is processed through LangChain, leveraging OpenAI's GPT-3 to generate interview-style questions.
+   - For each generated question, LangChain produces a corresponding answer, forming a Q&A pair.
+
+3. **Display and Interactivity**:
+   - Streamlit dynamically displays the generated Q&A pairs in a visually appealing format.
+   - Users can interact with the app, viewing each Q&A pair in an accordion-style layout.
+
+---
+
+## Step-by-Step Project Implementation
+
+1. **PDF Text Extraction**: 
+   - Use `PyPDF2` to read and extract raw text data from the uploaded PDF file.
+   
+2. **Q&A Generation Pipeline**:
+   - Use `src/helper.py` where the function `llm_pipeline` utilizes the LangChain and OpenAI API to generate a list of questions based on the text content.
+   - The function runs each question through the OpenAI model to generate answers.
+
+3. **Display in Streamlit**:
+   - In `app.py`, Streamlit is used to build the web interface, including the file upload widget, the "Generate Q&A" button, and the Q&A display area.
+   - Custom CSS styles are applied for enhanced visual appeal and better user experience.
+
+4. **Environment Variable Setup**:
+   - `.env` file stores sensitive information like the OpenAI API key, which is loaded by `dotenv` for security.
+
+5. **Error Handling and User Feedback**:
+   - The application provides error messages and user feedback using Streamlit’s inbuilt notification features, improving robustness and user experience.
+
+---
+
+## File Descriptions
+
+- **app.py**: 
+  - Main application file that runs the Streamlit app. 
+  - Manages user interactions, file uploads, and displays the generated Q&A pairs.
+
+- **src/helper.py**:
+  - Contains the `llm_pipeline` function responsible for processing the PDF text and generating the Q&A pairs.
+  - Interfaces with LangChain and the OpenAI API to create questions and answers based on the provided content.
+
+- **uploads/**:
+  - Directory where uploaded PDF files are temporarily stored during each session.
+
+- **requirements.txt**:
+  - Lists all dependencies required to run the project, including `streamlit`, `langchain`, `faiss`, `PyPDF2`, and `dotenv`.
+
+- **.env**:
+  - Stores environment variables securely. This file should include `OPENAI_API_KEY`, used to authenticate requests to OpenAI's API.
+
+---
+
 ## Contributing
 Contributions are welcome! To contribute:
 
@@ -155,6 +229,7 @@ Special thanks to OpenAI for providing the powerful language models that make th
 ## Troubleshooting
 
 - **Streamlit Errors**: Ensure all required libraries are installed. Run `pip install -r requirements.txt` if needed.
-- **Environment Variable Issues**: Double-check that your `.env` file is correctly set up in the root directory.
-- **API Key Errors**: If you encounter issues with the OpenAI API, ensure your API key is active and has sufficient quota.
+- **Environment Variable Issues**: Double-check that your `.env` file is correctly set up
 
+ in the root directory.
+- **API Key Errors**: If you encounter issues with the OpenAI API, ensure your API key is active and has sufficient quota.
