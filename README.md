@@ -1,6 +1,6 @@
 # LangQ: Your AI-Powered Interview Prep Curator
 
-**LangQ** is an AI-powered application designed to assist users in preparing for interviews by generating tailored questions and answers. This app utilizes OpenAI’s language model to read and analyze a provided PDF document, producing insightful Q&A pairs using Langchain. The app is built using **Streamlit** for a seamless, interactive, and user-friendly experience.
+**LangQ** is an end-to-end deployed AI-powered application designed to assist users in preparing for interviews by generating tailored questions and answers. Deployed at [LangQ - LLM](https://langqllm.streamlit.app/), this app utilizes OpenAI’s language model with LangChain to analyze any PDF document (study materials, documentation, cheat sheets, etc.) and produce insightful Q&A pairs. Built on **Streamlit** for an interactive, user-friendly experience.
 
 ---
 
@@ -13,7 +13,7 @@
 - [Usage](#usage)
 - [Environment Variables](#environment-variables)
 - [Methodology](#methodology)
-- [Step-by-Step Implementation](#step-by-step-implementation)
+- [Step-by-Step Project Implementation](#step-by-step-project-implementation)
 - [File Descriptions](#file-descriptions)
 - [Contributing](#contributing)
 - [License](#license)
@@ -229,7 +229,7 @@ Special thanks to OpenAI for providing the powerful language models that make th
 ## Troubleshooting
 
 - **Streamlit Errors**: Ensure all required libraries are installed. Run `pip install -r requirements.txt` if needed.
-- **Environment Variable Issues**: Double-check that your `.env` file is correctly set up
+-
 
- in the root directory.
+ **Environment Variable Issues**: Double-check that your `.env` file is correctly set up in the root directory.
 - **API Key Errors**: If you encounter issues with the OpenAI API, ensure your API key is active and has sufficient quota.
