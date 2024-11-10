@@ -11,7 +11,7 @@ from src.helper import llm_pipeline  # Importing llm_pipeline from src.helper
 load_dotenv()
 
 # Initialize OpenAI API using only the .env file
-openai_api_key = st.secret("OPENAI_API_KEY")
+openai_api_key = os.getenv("OPENAI_API_KEY")
 if not openai_api_key:
     st.error("OpenAI API key not found. Please set it in the .env file.")
 
@@ -35,7 +35,7 @@ st.markdown("""
     <style>
     /* General Background */
     .main {
-        background-color: #2D2F33; /* Dark background */
+        background-color: #2D2F33;
         color: #E0E0E0;
         font-family: Arial, sans-serif;
     }
@@ -43,25 +43,34 @@ st.markdown("""
     /* Title Styling */
     .title-container {
         text-align: center;
-        font-size: 2rem; /* Slightly smaller font size to fit in one line */
+        font-size: 2rem;
         font-weight: 700;
-        color: #FFA500; /* Bright Orange for title */
+        color: #FFA500;
         margin-top: 10px;
-        margin-bottom: 45px; /* Small gap between title and description */
-        white-space: nowrap; /* Prevents the title from wrapping */
+        margin-bottom: 20px;
+        white-space: nowrap;
+    }
+
+    /* Author Styling */
+    .author-container {
+        text-align: center;
+        font-size: 1rem;
+        color: #c89574;
+        font-style: italic;
+        margin-bottom: 51px;
     }
     
     /* Description Styling */
     .description {
         text-align: center;
-        color: #D3D3D3; /* Light gray for description */
-        font-size: 1 rem;
-        margin-bottom: 55px;
+        color: #D3D3D3;
+        font-size: 1rem;
+        margin-bottom: 70px;
     }
     
     /* Button Styling */
     .stButton>button {
-        background-color: #FF5733; /* Vibrant Coral color */
+        background-color: #005500;
         color: white;
         font-size: 18px;
         padding: 10px 20px;
@@ -71,12 +80,12 @@ st.markdown("""
         transition: background-color 0.3s ease;
     }
     .stButton>button:hover {
-        background-color: #E04A27; /* Slightly darker coral on hover */
+        background-color: #006400;
     }
     
     /* File Uploader Styling */
     .stFileUploader>div {
-        background-color: #424549; /* Slightly lighter background */
+        background-color: #424549;
         padding: 10px;
         border-radius: 5px;
     }
@@ -86,18 +95,18 @@ st.markdown("""
         background-color: #3E4147;
         padding: 15px;
         border-radius: 8px;
-        border: 1px solid #5A5C60; /* Soft border for Q&A */
+        border: 1px solid #5A5C60;
         margin-bottom: 15px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     }
     .question {
         font-weight: bold;
         font-size: 1.1rem;
-        color: #FFA500; /* Orange for question text */
+        color: #FFA500;
     }
     .answer {
         font-style: italic;
-        color: #D3D3D3; /* Light gray for answer text */
+        color: #D3D3D3;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -105,11 +114,14 @@ st.markdown("""
 # Streamlit UI Setup
 st.markdown("<div class='title-container'>📚 LangQ: Your AI-Powered Interview Prep Curator</div>", unsafe_allow_html=True)
 
+# Author names in italic, light yellow color
+st.markdown("<div class='author-container'>By Dileep Kanumuri, Saranya Gopireddy, Satwik Dikkala</div>", unsafe_allow_html=True)
+
 # Header Description with complementary color and centered alignment, with spacing adjusted
 st.markdown(
     "<div class='description'>"
-    "Upload a PDF file, and generate interview-style questions and answers automatically. "
-    "This app uses OpenAI's powerful Large Language Model to analyze the text and create insightful Q&A pairs."
+    "Upload your study materials, documentation, cheat sheets, or any text-based PDF files to automatically generate interview-style questions and answers. "
+    "Powered by OpenAI’s advanced language model, this app provides insightful Q&A pairs to help you prepare with ease and precision."
     "</div>", 
     unsafe_allow_html=True
 )
