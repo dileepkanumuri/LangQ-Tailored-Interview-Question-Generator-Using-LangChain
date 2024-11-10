@@ -11,7 +11,7 @@ from src.helper import llm_pipeline  # Importing llm_pipeline from src.helper
 load_dotenv()
 
 # Initialize OpenAI API using only the .env file
-openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = st.secret("OPENAI_API_KEY")
 if not openai_api_key:
     st.error("OpenAI API key not found. Please set it in the .env file.")
 
